@@ -55,6 +55,9 @@
                                     <el-form-item label="模型名称">
                                         <el-input v-model="gptForm.model" placeholder="如gpt-3.5-turbo"/>
                                     </el-form-item>
+                                    <el-form-item label="预设内容">
+                                        <el-input v-model="gptForm.presets" type="textarea" :rows="4" placeholder="请填写你对机器人的设定和要求"/>
+                                    </el-form-item>
                                     <el-form-item>
                                         <el-button type="primary" @click="savegpt">
                                             保存
@@ -87,7 +90,7 @@
                                             <el-input v-model="tyForm.max_tokens" placeholder="模型回答的tokens的最大长度"/>
                                         </el-form-item>
                                         <el-form-item label="预设内容">
-                                            <el-input v-model="tyForm.presets" type="textarea" placeholder="请填写你对机器人的设定和要求"/>
+                                            <el-input v-model="tyForm.presets" type="textarea" :rows="4" placeholder="请填写你对机器人的设定和要求"/>
                                         </el-form-item>
                                         <el-form-item>
                                             <el-button type="primary" @click="savety">
@@ -127,6 +130,7 @@ export default {
             apiKey: '',
             app_code: '',
             model: '',
+            presets: ''
         })
 
         const tyForm = ref({
