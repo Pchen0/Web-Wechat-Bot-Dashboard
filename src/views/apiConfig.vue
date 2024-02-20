@@ -55,6 +55,12 @@
                                     <el-form-item label="模型名称">
                                         <el-input v-model="gptForm.model" placeholder="如gpt-3.5-turbo"/>
                                     </el-form-item>
+                                    <el-form-item label="最大token">
+                                        <el-input v-model="gptForm.max_tokens" placeholder="模型回答的tokens的最大长度"/>
+                                    </el-form-item>
+                                    <el-form-item label="温度(决定结果随机性)">
+                                        <el-input v-model="gptForm.temperature" placeholder="取值范围 (0,1] "/>
+                                    </el-form-item>
                                     <el-form-item label="预设内容">
                                         <el-input v-model="gptForm.presets" type="textarea" :rows="4" placeholder="请填写你对机器人的设定和要求"/>
                                     </el-form-item>
@@ -130,6 +136,8 @@ export default {
             apiKey: '',
             app_code: '',
             model: '',
+            max_tokens: '',
+            temperature: '',
             presets: ''
         })
 
